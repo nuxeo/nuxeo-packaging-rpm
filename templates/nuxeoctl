@@ -1,0 +1,17 @@
+#!/bin/bash
+
+COMMAND="/opt/nuxeo/server/bin/nuxeoctl $@"
+export NUXEO_CONF=${NUXEO_CONF:-"/opt/nuxeo/conf/nuxeo.conf"}
+
+if [ "$UID" = "0" ]; then
+    ulimit -n 4096
+    su nuxeo -c "$COMMAND"
+elif [ "$USER" = "nuxeo" ]; then
+    $COMMAND
+else
+    echo "This can only be executed by root or nuxeo"
+    exit 1
+fi
+
+exit $?
+

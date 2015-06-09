@@ -1,0 +1,7 @@
+FROM centos:centos6
+
+# To test packages without having to re-download dependencies every time
+# Run docker build with the '-f' option
+
+RUN yum -y install java-1.8.0-openjdk fontconfig
+
