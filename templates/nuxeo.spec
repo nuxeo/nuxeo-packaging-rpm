@@ -6,7 +6,7 @@ License:    LGPLv2.1
 URL:        http://www.nuxeo.com/
 BuildArch:  noarch
 BuildRequires: unzip
-Requires:   java-1.8.0-openjdk
+Requires:   java-1.8.0-openjdk, net-tools, libreoffice, libreoffice-headless, ImageMagick, poppler-utils, libwpd-tools
 
 %description
 Nuxeo is a document management server, designed to help organizations

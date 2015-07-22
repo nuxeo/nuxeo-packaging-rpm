@@ -5,7 +5,7 @@ cd $(dirname $0)
 version=$1
 
 if [ -z "${version}" ]; then
-    echo "Usage: build-rpm.sh <version>"
+    echo "Usage: build-nuxeo-rpm.sh <version>"
     exit 1
 fi
 
@@ -25,7 +25,7 @@ fi
 mkdir -p cache/${version}/rpm
 
 mkdir -p cache/${version}/bin
-sed "s/@VERSION@/${version}/g" templates/build.sh > cache/${version}/bin/build.sh
+sed "s/@VERSION@/${version}/g" templates/build-nuxeo.sh > cache/${version}/bin/build.sh
 chmod +x cache/${version}/bin/build.sh
 cp templates/nuxeoctl cache/${version}/bin/
 
